@@ -45,8 +45,6 @@ struct SwatchColor
 @implementation SwatchDocument
 
 - (BOOL)readFromURL:(NSURL *)url {
-//	[self redirectConsoleLogToDocumentFolder];
-	
 	// Create colors array
 	colors = [[NSMutableArray alloc]init];
 	
@@ -219,13 +217,6 @@ struct SwatchColor
     [context restoreGraphicsState];
     [NSGraphicsContext restoreGraphicsState];
 }
-
-- (void) redirectConsoleLogToDocumentFolder
-{
-	NSString *logPath = [NSHomeDirectory() stringByAppendingPathComponent:@"console.txt"];
-	freopen([logPath fileSystemRepresentation],"a+",stderr);
-}
-
 
 @end
 
